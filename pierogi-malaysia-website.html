@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pierogi Malaysia | Authentic Polish Dumplings</title>
+  <meta name="description" content="Authentic handmade pierogi in Malaysia. Polish comfort food with halal-friendly flavours, café pop-ups, frozen packs and event catering." />
+  <style>
+    :root{
+      --cream:#fff7ec; --red:#b91c1c; --dark:#211714; --gold:#d6a44f;
+      --green:#3f5f45; --white:#ffffff; --muted:#6b5f58;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,247,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid #eadac7}
+    nav{max-width:1180px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{font-weight:900;font-size:22px;color:var(--red);letter-spacing:-.5px}
+    .navlinks{display:flex;gap:18px;align-items:center}
+    .navlinks a{color:var(--dark);text-decoration:none;font-weight:700;font-size:14px}
+    .navlinks a.btn{color:white}
+    .btn{display:inline-block;background:var(--red);color:white;text-decoration:none;padding:13px 20px;border-radius:999px;font-weight:800;box-shadow:0 10px 30px rgba(185,28,28,.22)}
+    .btn.secondary{background:var(--dark)}
+    .hero{max-width:1180px;margin:auto;padding:76px 20px 54px;display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:white;border:1px solid #eadac7;border-radius:999px;padding:8px 14px;font-weight:800;color:var(--green);font-size:14px}
+    h1{font-size:clamp(42px,6vw,76px);line-height:.95;margin:18px 0 18px;letter-spacing:-3px}
+    h1 span{color:var(--red)}
+    .lead{font-size:20px;color:var(--muted);max-width:620px}
+    .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+    .hero-card{background:linear-gradient(145deg,#fff,#ffe9d1);border-radius:36px;padding:28px;box-shadow:0 30px 90px rgba(33,23,20,.15);position:relative;overflow:hidden}
+    .plate{aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle,#fff 0 38%,#f6d2a8 39% 58%,#9f1d1d 59% 60%,#fff 61%);display:grid;place-items:center}
+    .dumplings{display:grid;grid-template-columns:repeat(2,120px);gap:18px;transform:rotate(-8deg)}
+    .dumpling{width:120px;height:78px;background:#f7c97b;border-radius:60px 60px 36px 36px;box-shadow:inset 0 -10px 0 rgba(141,84,32,.16),0 10px 16px rgba(0,0,0,.12);position:relative}
+    .dumpling:before{content:"";position:absolute;left:18px;right:18px;top:15px;height:8px;border-top:4px dotted rgba(110,65,25,.35);border-radius:50%}
+    .float{position:absolute;background:var(--green);color:white;border-radius:18px;padding:12px 14px;font-weight:900;box-shadow:0 12px 24px rgba(0,0,0,.16)}
+    .float.one{top:24px;right:22px}.float.two{bottom:24px;left:22px;background:var(--red)}
+    section{max-width:1180px;margin:auto;padding:54px 20px}
+    .section-title{font-size:38px;line-height:1.05;margin:0 0 14px;letter-spacing:-1.5px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+    .card{background:white;border:1px solid #eadac7;border-radius:26px;padding:24px;box-shadow:0 16px 40px rgba(33,23,20,.06)}
+    .card h3{margin:0 0 8px;font-size:22px}.card p{color:var(--muted);margin:0}
+    .menu{grid-template-columns:repeat(3,1fr)}
+    .menu .card{display:flex;flex-direction:column}
+    .price{font-size:26px;font-weight:900;color:var(--red);margin-top:auto;padding-top:16px}
+    .tag{display:inline-block;background:#fff0d9;color:#7a3b00;padding:6px 10px;border-radius:999px;font-weight:800;font-size:12px;margin-bottom:10px}
+    .banner{background:var(--dark);color:white;border-radius:34px;padding:38px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+    .banner p{color:#eadac7;margin:0}
+    .steps{counter-reset:step}.step{display:flex;gap:16px;align-items:flex-start;margin:16px 0}
+    .step:before{counter-increment:step;content:counter(step);background:var(--red);color:white;border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-weight:900;flex:0 0 auto}
+    form{display:grid;gap:12px}
+    input,select,textarea{width:100%;padding:14px;border-radius:16px;border:1px solid #d9c7b4;font:inherit;background:#fff}
+    footer{text-align:center;padding:34px 20px;color:var(--muted)}
+    @media(max-width:860px){
+      .hero,.banner{grid-template-columns:1fr}.grid,.menu{grid-template-columns:1fr}.navlinks{display:none}
+      .dumplings{grid-template-columns:repeat(2,92px)}.dumpling{width:92px;height:60px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand">Pierogi Kita</div>
+      <div class="navlinks">
+        <a href="#menu">Menu</a><a href="#story">Story</a><a href="#order">Order</a>
+        <a class="btn" href="https://wa.me/601133782016?text=Hi%20Pierogi%20Kita%2C%20I%20want%20to%20preorder%20pierogi">WhatsApp Order</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="badge">🥟 Authentic Polish pierogi, made fresh in Malaysia</div>
+        <h1>Comfort food that feels <span>homemade</span>.</h1>
+        <p class="lead">Handmade dumplings filled with creamy potato, mozarella cheese, beef, mushroom and Malaysian-inspired limited drops. Pan-seared, buttery, golden and ready for your next viral food moment.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#order">Preorder Now</a>
+          <a class="btn secondary" href="#menu">View Menu</a>
+        </div>
+      </div>
+      <div class="hero-card" aria-label="Illustration of pierogi">
+        <div class="float one">Use Halal Ingredients</div>
+        <div class="plate"><div class="dumplings"><div class="dumpling"></div><div class="dumpling"></div><div class="dumpling"></div><div class="dumpling"></div></div></div>
+        <div class="float two">Frozen packs available</div>
+      </div>
+    </section>
+
+    <section id="story">
+      <h2 class="section-title">Why Malaysia will love pierogi</h2>
+      <p class="lead">It is familiar like dumpling, comforting like karipap, and premium enough for cafés, pop-ups, office lunch boxes and weekend family sharing.</p>
+      <div class="grid">
+        <div class="card"><h3>Small-bite sharing</h3><p>Built for platter culture, office makan-makan and event catering.</p></div>
+        <div class="card"><h3>Visual & viral</h3><p>Golden sear, sour cream drizzle, chilli oil and mozarella cheese-pull fillings for Reels and TikTok.</p></div>
+        <div class="card"><h3>Localised drops</h3><p>Core authentic flavours plus limited Malaysian-inspired seasonal flavours.</p></div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <h2 class="section-title">Signature menu</h2>
+      <div class="grid menu">
+        <div class="card"><span class="tag">Classic</span><h3>Potato & mozarella cheese</h3><p>Soft potato, creamy mozarella cheese, caramelised onion.</p><div class="price">RM18</div></div>
+        <div class="card"><span class="tag">Premium</span><h3>Beef & Onion</h3><p>Juicy savoury beef, pepper, buttery finish.</p><div class="price">RM24</div></div>
+        <div class="card"><span class="tag">Vegetarian</span><h3>Mushroom & Cabbage</h3><p>Earthy mushroom, cabbage, black pepper.</p><div class="price">RM20</div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="banner">
+        <div>
+          <h2 class="section-title">Launch campaign: “Pierogi Weekend Drop”</h2>
+          <p>Open preorder Monday–Thursday. Cook and deliver Friday–Sunday. Limited batches create urgency, reduce wastage and support social media hype.</p>
+        </div>
+        <a class="btn" href="#order">Join Waitlist</a>
+      </div>
+    </section>
+
+    <section id="order">
+      <h2 class="section-title">Preorder / catering enquiry</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>How it works</h3>
+          <div class="steps">
+            <div class="step"><p>Choose your flavour and quantity.</p></div>
+            <div class="step"><p>Confirm delivery or pickup slot.</p></div>
+            <div class="step"><p>Enjoy fresh hot pierogi or keep frozen packs at home.</p></div>
+          </div>
+        </div>
+        <div class="card" style="grid-column:span 2">
+          <form onsubmit="sendWhatsApp(event)">
+            <input id="name" placeholder="Your name" required>
+            <input id="phone" placeholder="Phone number" required>
+            <select id="flavour">
+              <option>Potato & mozarella cheese</option><option>Beef & Onion</option><option>Mushroom & Cabbage</option><option>Catering / Corporate order</option>
+            </select>
+            <textarea id="message" rows="4" placeholder="Quantity, date, location, special request"></textarea>
+            <button class="btn" type="submit" style="border:0;cursor:pointer">Send WhatsApp Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Pierogi Kita Malaysia. No.1 Authentic Handmade Polish Dumplings in Malaysia
+  </footer>
+
+  <script>
+    function sendWhatsApp(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const flavour = document.getElementById('flavour').value;
+      const message = document.getElementById('message').value;
+      const text = `Hi Pierogi Kita, my name is ${name}. Phone: ${phone}. I want to order/enquire: ${flavour}. Details: ${message}`;
+      window.open(`https://wa.me/601133782016?text=${encodeURIComponent(text)}`, '_blank');
+    }
+  </script>
+</body>
+</html>
